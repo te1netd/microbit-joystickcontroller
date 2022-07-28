@@ -46,6 +46,97 @@ basic.forever(function () {
     }
     if (pins.digitalReadPin(DigitalPin.P16) == 0) {
         BUTTONS += 8
+        if (SX * 10 + SY == 0) {
+            if (BUTTONS > 0) {
+                basic.showLeds(`
+                    . # # # .
+                    # . . . #
+                    # . . . #
+                    # . . . #
+                    . # # # .
+                    `)
+            }
+        } else {
+            if (SX * 10 + SY == 1) {
+                basic.showLeds(`
+                    . . # . .
+                    . # # # .
+                    # . # . #
+                    . . # . .
+                    . . # . .
+                    `)
+            } else {
+                if (SX * 10 + SY == 2) {
+                    basic.showLeds(`
+                        . . # . .
+                        . . # . .
+                        # . # . #
+                        . # # # .
+                        . . # . .
+                        `)
+                } else {
+                    if (SX * 10 + SY == 10) {
+                        basic.showLeds(`
+                            . . # . .
+                            . # . . .
+                            # # # # #
+                            . # . . .
+                            . . # . .
+                            `)
+                    } else {
+                        if (SX * 10 + SY == 20) {
+                            basic.showLeds(`
+                                . . # . .
+                                . . . # .
+                                # # # # #
+                                . . . # .
+                                . . # . .
+                                `)
+                        } else {
+                            if (SX * 10 + SY == 11) {
+                                basic.showLeds(`
+                                    # # # # .
+                                    # # . . .
+                                    # . # . .
+                                    # . . # .
+                                    . . . . #
+                                    `)
+                            } else {
+                                if (SX * 10 + SY == 12) {
+                                    basic.showLeds(`
+                                        . . . . #
+                                        # . . # .
+                                        # . # . .
+                                        # # . . .
+                                        # # # # .
+                                        `)
+                                } else {
+                                    if (SX * 10 + SY == 21) {
+                                        basic.showLeds(`
+                                            . # # # #
+                                            . . . # #
+                                            . . # . #
+                                            . # . . #
+                                            # . . . .
+                                            `)
+                                    } else {
+                                        if (SX * 10 + SY == 22) {
+                                            basic.showLeds(`
+                                                # . . . .
+                                                . # . . #
+                                                . . # . #
+                                                . . . # #
+                                                . # # # #
+                                                `)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     radio.sendNumber(SX * 1000 + SY * 100 + BUTTONS)
     basic.pause(100)
